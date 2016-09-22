@@ -60,10 +60,14 @@ API (aka "hydrating").
 ## Running
 To collect @realDonaldTrump's tweets between January 1, 2016 and April 1, 2016:
 
-1. Run twitter_scraper and write the tweet ids to a file. *Leave your system
-   alone while twitter_scraper is running.* I received inconsistent results
-   while I was doing other work on my system while twitter_scraper was
-   running. Better yet, use a VM.
+1. Run twitter_scraper and write the tweet ids to a file.
+
+   *Leave your system alone while twitter_scraper is running.* I received 
+   inconsistent results while I was doing other work on my system while 
+   twitter_scraper was running. Better yet, use a VM.
+   
+   *Tip*: You can get the date that a user joined Twitter from the user's
+   account page.
    
         python twitter_scraper.py @realDonaldTrump --since=2016-01-01 --until=2016-04-01 > tweet_ids.txt
 
