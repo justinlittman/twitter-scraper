@@ -69,6 +69,8 @@ To collect @realDonaldTrump's tweets between January 1, 2016 and April 1, 2016:
    *Tip*: You can get the date that a user joined Twitter from the user's
    account page.
    
+   *Tip*: Timestamp the tweet id file by using ` > tweet_ids_$(date -d "today" +"%Y%m%d%H%M").txt`
+   
         python twitter_scraper.py @realDonaldTrump --since=2016-01-01 --until=2016-04-01 > tweet_ids.txt
 
 2. Hydrate the tweet ids with Twarc and write to a file. *You will need to
@@ -76,3 +78,8 @@ To collect @realDonaldTrump's tweets between January 1, 2016 and April 1, 2016:
    see [Twarc's documentation](https://github.com/edsu/twarc#twitter-api-keys).
 
         twarc.py --hydrate tweet_ids.txt > tweets.json
+
+## Acknowledgements
+This work was inspired by the [Trump Twitter Archive](http://www.trumptwitterarchive.com/).
+
+And appreciative (once again) for Ed Summer's [twarc](https://github.com/edsu/twarc).
