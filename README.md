@@ -61,6 +61,8 @@ API (aka "hydrating").
 To collect @realDonaldTrump's tweets between January 1, 2016 and April 1, 2016:
 
 1. Run twitter_scraper and write the tweet ids to a file.
+   
+        python twitter_scraper.py @realDonaldTrump --since=2016-01-01 --until=2016-04-01 > tweet_ids.txt
 
    *Leave your system alone while twitter_scraper is running.* I received 
    inconsistent results while I was doing other work on my system while 
@@ -71,7 +73,10 @@ To collect @realDonaldTrump's tweets between January 1, 2016 and April 1, 2016:
    
    *Tip*: Timestamp the tweet id file by using ` > tweet_ids_$(date -d "today" +"%Y%m%d%H%M").txt`
    
-        python twitter_scraper.py @realDonaldTrump --since=2016-01-01 --until=2016-04-01 > tweet_ids.txt
+   *Tip*: To account for the inconsistency, you may want to run multiple
+   scrapes. They can be merged with:
+   
+        cat tweet_ids_*.txt | sort -u > tweet_ids.txt
 
 2. Hydrate the tweet ids with Twarc and write to a file. *You will need to
    provide Twarc with a set of Twitter API keys.* For more information,
