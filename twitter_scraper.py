@@ -36,7 +36,7 @@ def scrape(screen_name, since_date, until_date, include_retweets=True, wait_secs
     driver = webdriver.Chrome()
     try:
         driver.implicitly_wait(wait_secs)
-        url = "https://twitter.com/search?q=from:{}+since:{}+until:{}".format(screen_name, since_date.isoformat(),
+        url = "https://twitter.com/search?f=tweets&vertical=default&q=from:{}+since:{}+until:{}&src=typd".format(screen_name, since_date.isoformat(),
                                                                               until_date.isoformat())
         if include_retweets:
             url += "+include:retweets"
